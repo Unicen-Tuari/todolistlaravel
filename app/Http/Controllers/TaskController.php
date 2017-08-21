@@ -63,7 +63,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit',['task' => $task]);
     }
 
     /**
@@ -75,7 +75,12 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required|unique:tasks|max:255',
+        'description' => 'required'
+      ]);
+      $task->update($request->all());
+      return redirect('tasks');
     }
 
     /**

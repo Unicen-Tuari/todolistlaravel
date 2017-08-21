@@ -5,6 +5,7 @@
   @foreach ($tasks as $task)
     <li>
       <a href="{{ route('tasks.show', $task) }}">{{ $task->name }}</a>
+      <a href="{{ route('tasks.edit', $task) }}">Edit</a>
       <form class="" action="{{route('tasks.destroy', $task)}}" method="post">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
