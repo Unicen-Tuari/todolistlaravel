@@ -41,7 +41,7 @@ class TaskController extends Controller
           'description' => 'required'
         ]);
         Task::create($request->all());
-        return redirect('tasks');
+        return redirect('task');
     }
 
     /**
@@ -80,7 +80,7 @@ class TaskController extends Controller
         'description' => 'required'
       ]);
       $task->update($request->all());
-      return redirect('tasks');
+      return redirect('task');
     }
 
     /**
@@ -92,6 +92,6 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
       $task->delete();
-      return redirect()->route('tasks.index');
+      return redirect('task');
     }
 }
