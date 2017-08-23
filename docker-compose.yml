@@ -38,6 +38,8 @@ services:
       - "MYSQL_ROOT_PASSWORD=secret"
     ports:
         - "33061:3306"
+  selenium:
+    image: selenium/standalone-chrome
 
 volumes:
   dbdata:
