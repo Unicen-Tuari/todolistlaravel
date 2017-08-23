@@ -9,11 +9,13 @@ class TasksTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker\Generator $faker)
     {
+      for ($i=0; $i < 100; $i++) {
         DB::table('tasks')->insert([
-        'name' => str_random(10),
-        'description' => str_random(40),
+        'name' => $faker->realText($maxNbChars = 20, $indexSize = 2),
+        'description' => $faker->realText($maxNbChars = 200, $indexSize = 2),
         ]);
+      }
     }
 }
