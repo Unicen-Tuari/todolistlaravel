@@ -6,17 +6,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <div class="content">
+    <div class="container">
       @if(count($errors) > 0)
         @foreach ($errors->all() as $error)
           <div class="alert alert-danger" role="alert">{{$error}}</div>
         @endforeach
       @endif
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3">
           @yield('main')
         </div>
       </div>
     </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </body>
 </html>
