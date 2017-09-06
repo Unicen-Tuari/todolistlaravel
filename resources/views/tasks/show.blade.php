@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('main')
+@section('content')
 <a href="{{ route('task.index') }}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Back to Tasks List</a>
 <div class="panel panel-default">
   <div class="panel-heading">

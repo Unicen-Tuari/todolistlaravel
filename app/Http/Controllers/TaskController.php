@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use Auth;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::paginate(9);
+        $tasks = Task::where('user_id','=',Auth::id())->paginate(9);
         return view('tasks.index',['tasks' => $tasks]);
     }
 

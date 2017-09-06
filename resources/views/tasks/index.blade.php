@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('main')
+@section('content')
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">To Do List <div class="pull-right"><a id="addTask" href="{{route('task.create')}}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div></h3>

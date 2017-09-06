@@ -15,6 +15,7 @@ class TasksTableSeeder extends Seeder
         DB::table('tasks')->insert([
         'name' => $faker->realText($maxNbChars = 20, $indexSize = 2),
         'description' => $faker->realText($maxNbChars = 200, $indexSize = 2),
+        'user_id' => 1,
         ]);
       }
     }
